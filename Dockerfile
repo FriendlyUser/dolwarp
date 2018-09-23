@@ -23,4 +23,8 @@ WORKDIR /data
 # Install latex packages
 RUN tlmgr install latexmk
 RUN tlmgr install scheme-full
+
+# Install an older version of listings
+RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2016/tlnet-final
+RUN tlmgr install listings
 VOLUME ["/data"]
