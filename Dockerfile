@@ -6,7 +6,7 @@ RUN apt-get update -q \
     && apt-get install -qy build-essential wget libfontconfig1 \
     && rm -rf /var/lib/apt/lists/* \
 
-RUN apt-get install poppler-utils -y
+RUN apt-get install poppler-utils
 
 # Install TexLive with scheme-basic
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
