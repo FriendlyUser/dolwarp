@@ -1,6 +1,8 @@
 Latex docker container [![Docker hub](https://img.shields.io/docker/pulls/blang/latex.svg)](https://hub.docker.com/r/blang/latex/)
 ======================
 
+Docker is hard to set up lol, crazy
+
 This container helps compiling latex sources without the need to install all latex packages on your system.
 
 Why should I use this container?
