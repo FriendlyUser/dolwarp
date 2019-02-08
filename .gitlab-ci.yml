@@ -19,6 +19,7 @@ build-master:
     - docker push "$CI_REGISTRY_IMAGE"
   only:
     - master
+  when: manual
 
 build:
   stage: build
@@ -29,6 +30,7 @@ build:
   except:
     - master
     - tags
+  when: manual
     
 build-tag:
   stage: build
@@ -37,3 +39,13 @@ build-tag:
     - docker push $IMAGE_TAG
   only: [tags, master]
  
+ release-tagged-image:
+  stage: build
+  script:
+    - docker build -t grandfleet/dolwarp:2-07-2019 .
+    - docker tag grandfleet/dolwarp:2-07-2019 grandfleet/dolwarp:2-07-2019
+    - docker push grandfleet/dolwarp:2-07-2019
+  only:
+    - master
+  when: manual
+
