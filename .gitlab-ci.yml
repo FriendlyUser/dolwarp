@@ -12,15 +12,6 @@ before_script:
   - docker info | grep Registr
   - echo "${CI_REGISTRY_PASSWORD}" | docker login -u "${CI_REGISTRY_USER}" --password-stdin "${CI_REGISTRY}"
 
-build-master:
-  stage: build
-  script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-  only:
-    - master
-  when: manual
-
 build:
   stage: build
   script:
@@ -31,15 +22,8 @@ build:
     - master
     - tags
   when: manual
-    
-build-tag:
-  stage: build
-  script:
-    - docker build -t $IMAGE_TAG .
-    - docker push $IMAGE_TAG
-  only: [tags, master]
  
- release-tagged-image:
+release-tagged-image:
   stage: build
   script:
     - docker build -t grandfleet/dolwarp:2-07-2019 .
