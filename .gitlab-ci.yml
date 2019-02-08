@@ -23,9 +23,9 @@ build:
 release-tagged-image:
   stage: build
   script:
-    - docker build -t grandfleet/dolwarp:2-07-2019 .
-    - docker tag grandfleet/dolwarp:2-07-2019 grandfleet/dolwarp:2-07-2019
-    - docker push grandfleet/dolwarp:2-07-2019
+    - docker build -t grandfleet/dolwarp:v0.65 .
+    - docker tag grandfleet/dolwarp:v0.65 grandfleet/dolwarp:v0.65
+    - docker push grandfleet/dolwarp:v0.65
   only:
     - master
   when: manual
