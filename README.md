@@ -1,3 +1,5 @@
+DEPRICATED USE DIMAGES INSTEAD
+
 Latex docker container [![Docker hub](https://img.shields.io/docker/pulls/blang/latex.svg)](https://hub.docker.com/r/blang/latex/)
 ======================
 
